@@ -70,6 +70,11 @@ p {
   font-family: var(--font-2);
 }
 
+.card,
+.image {
+  width: 35%;
+}
+
 /* Predefined CSS */
 .row {
   display: flex;
@@ -97,6 +102,39 @@ p {
 .screen-height {
   height: 100vh;
 }
-.width-35 {
-  width: 35%;
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* media query */
+@media screen and (max-width: 425px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    height: auto !important;
+  }
+
+  .image {
+    order: 1;
+  }
+
+  .card,
+  .image {
+    width: 90%;
+  }
+
+  .card {
+    order: 2;
+    padding: 25px 0;
+    text-align: center;
+    height: inherit;
+    margin-bottom: 100px;
+  }
+  .list {
+    flex-direction: column;
+  }
+  .list li {
+    margin-bottom: 25px;
+  }
 }
