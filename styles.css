@@ -2,25 +2,29 @@
   --bg: #0a0c1b;
   --white: #ffffff;
 
-  --primary: #a660d6;
+  --primary: rgb(166, 96, 214);
   --primary-dark: #1c1938;
+  --primary-shadow: rgba(167, 96, 214, 0.63);
 
   --text-color: #b0afc3;
 
-  --font: "", system-ui;
+  --font-1: "Inter", system-ui;
+  --font-2: "Lexend Deca", system-ui;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text-color);
-  font-family: var(--font);
+  font-family: var(--font-1);
+  font-size: 15px;
 }
 
+/* Card Styling */
 .card {
   background: var(--primary-dark);
   height: 445px;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   padding: 0 25px;
 }
 .card div {
@@ -30,35 +34,43 @@ body {
 .card ul {
   width: 70%;
 }
-img {
+/* Image Styling */
+.image {
   height: 445px;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(rgb(67 0 110 / 64%), var(--primary-shadow)),
+    url(images/image-header-desktop.jpg);
+  filter: contrast(1.2);
 }
 
+/* Text Appearance */
 h1 {
   color: var(--white);
+  letter-spacing: 1.3px;
+  font-size: 31px;
 }
 h1 span {
   color: var(--primary);
 }
+p {
+  line-height: 1.7;
+}
+
 .list li {
   font-weight: 900;
   color: white;
   font-size: 25px;
 }
 .list li span {
+  padding: 5px 0;
   font-weight: 300;
-  color: #b0afc3;
+  color: #9291a3;
   text-transform: uppercase;
-  font-size: 15px;
-}
-p {
-  line-height: 1.5;
+  font-size: 13px;
+  font-family: var(--font-2);
 }
 
 /* Predefined CSS */
-.flex {
-  display: flex;
-}
 .row {
   display: flex;
   flex-direction: row;
@@ -70,12 +82,6 @@ p {
 .hr-center {
   align-items: center;
 }
-.hr-right {
-  align-items: flex-end;
-}
-.vr-top {
-  align-items: flex-start;
-}
 .vr-center {
   justify-content: center;
 }
@@ -85,17 +91,8 @@ p {
 .space-between {
   justify-content: space-between;
 }
-.space-around {
-  justify-content: space-around;
-}
 .space-evenly {
   justify-content: space-evenly;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 .screen-height {
   height: 100vh;
